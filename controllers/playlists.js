@@ -1,5 +1,5 @@
-const Playlist = require('../models/playlist');
 const Song = require('../models/song');
+const Playlist = require('../models/playlist');
 
 module.exports = {
   index,

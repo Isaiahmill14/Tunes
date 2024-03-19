@@ -31,7 +31,7 @@ app.use('/songs', songsRouter);
 // Mount these routers to root because not all 
 // paths for a related/nested resource begin the same
 app.use('/', reviewsRouter);
-app.use('/', playlistsRouter);
+app.use('/playlists', playlistsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
