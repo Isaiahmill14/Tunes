@@ -17,13 +17,12 @@ async function index(res, res) {
 async function show(req, res) {
   const playlist = await Playlist.findById(req.params.id).populate('songs')
   const songs = await Song.find({ _id: { $nin: playlist.song} }).sort('title')
-  console.log(songs)
   res.render('playlists/show', { title: 'Playlist Detail', playlist, songs })
 }
 
 async function addToPlaylist(req, res) {
   const playlist = await Playlist.findById(req.params.id)
-  playlist.songs.push(req.body.playlistId)
+  playlist.songs.push(req.body.songId)
   await playlist.save()
   res.redirect(`/playlists/${playlist._id}`)
 }

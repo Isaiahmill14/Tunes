@@ -3,33 +3,29 @@
 <h1><%= playlist.name %></h1>
 
 <section id="show-page">
-    <ul>
-        <%- playlist.songs.map(p =>
-            `<li>${s.title} <small>${s.artist}</small></li>`
-        ).join('') %>
-    </ul>
     <table id="list">
         <thead>
-          <tr>
-            <th>Title</th>
-            <th>Artist</th>
-            <th>Ft.</th>
-            <th>Album</th>
-            <th></th>
-          </tr>
+            <tr>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Ft.</th>
+                <th>Album</th>
+                <th></th>
+            </tr>
         </thead>
         <tbody>
-          <% songs.forEach(function(s) { %>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><a href="/songs/<%= s._id %>">DETAILS</a></td>
-            </tr>
-            <% }); %>
-          </tbody>
-        </table>
+            <%- playlist.songs.map(s => 
+                    // Breaks app when adding direct route for details
+                `<tr>
+                    <td>${s.title}</td>
+                    <td>${s.artist}</td>
+                    <td>${s.featured}</td>
+                    <td>${s.album}</td><br>
+                    <td><a>DETAILS</a></td>
+                </tr>`
+                ) %>
+        </tbody>
+    </table>
 </section>
 
 <form id="add-song-to-play" action="/playlists/<%= playlist._id %>/songs" method="POST">
