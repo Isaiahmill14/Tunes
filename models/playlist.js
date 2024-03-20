@@ -28,9 +28,10 @@ const songSchema = new Schema({
 
 const playlistSchema = new Schema({
   name: { type: String, required: true },
-  songs: [songSchema],
-  created: { type: String },
-  lastEdited: { type: String },
+  songs: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Song'
+  }],
   // reviews: [reviewSchema]
 }, {
   timestamps: true

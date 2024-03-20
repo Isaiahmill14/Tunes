@@ -1,5 +1,44 @@
 <%- include('../partials/header') %>
 
+<h1><%= playlist.name %></h1>
 
+<section id="show-page">
+    <ul>
+        <%- playlist.songs.map(p =>
+            `<li>${s.title} <small>${s.artist}</small></li>`
+        ).join('') %>
+    </ul>
+    <table id="list">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Ft.</th>
+            <th>Album</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% songs.forEach(function(s) { %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><a href="/songs/<%= s._id %>">DETAILS</a></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+</section>
+
+<form id="add-song-to-play" action="/playlists/<%= playlist._id %>/songs" method="POST">
+    <select name="songId">
+      <%- songs.map(s =>
+        `<option value="${s._id}">${s.title}</option>` 
+      ).join('') %>
+    </select>
+    <button type="Submit">Add to Playlist</button>
+  </form>
 
 <%- include('../partials/footer') %>

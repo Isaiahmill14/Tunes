@@ -12,6 +12,7 @@ router.get('/new', playlistsCtrl.new);
 router.get('/:id', playlistsCtrl.show)
 // POST /playlists (create functionality)
 router.post('/', playlistsCtrl.create);
-
+// POST /playlists/:id/songs
+router.post('/:id/songs', playlistsCtrl.addToPlaylist)
 
 module.exports = router;

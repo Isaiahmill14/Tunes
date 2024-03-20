@@ -15,10 +15,7 @@ async function index(req, res) {
 
 async function show(req, res) {
   const song = await Song.findById(req.params.id)
-  // Playlist.find({}).where('_id').nin(song.cast) Mongoose way
-  const playlists = await Playlist.find({ _id: { $nin: song.cast} }).sort('name') // MongoDb way
-  console.log(playlists)
-  res.render('songs/show', { title: 'Song Detail', song, playlists });
+  res.render('songs/show', { title: 'Song Detail', song });
 }
 
 function newSong(req, res) {

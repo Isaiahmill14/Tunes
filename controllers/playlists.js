@@ -1,5 +1,5 @@
-const Song = require('../models/song');
 const Playlist = require('../models/playlist');
+const Song = require('../models/song');
 
 module.exports = {
   index,
@@ -23,7 +23,7 @@ async function show(req, res) {
 
 async function addToPlaylist(req, res) {
   const playlist = await Playlist.findById(req.params.id)
-  playlist.song.push(req.body.playlistId)
+  playlist.songs.push(req.body.playlistId)
   await playlist.save()
   res.redirect(`/playlists/${playlist._id}`)
 }
