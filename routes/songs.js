@@ -11,17 +11,9 @@ router.get('/new', songsCtrl.new);
 router.get('/:id', songsCtrl.show);
 // POST /songs
 router.post('/', songsCtrl.create);
-// GET /songs/update
-// router.get('/edit', function(req, res, next) {
-//     const item = {
-//         title: req.body.title,
-//         artist: req.body.artist,
-//         ft: req.body.featured,
-//         album: r
-//     }
-//     const id = req.body.
-// })
-// PUT 
-// router.get('/update', songCtrl.update)
+// GET /songs/edit
+router.get('/:id/edit', songsCtrl.edit)
+// PUT /songs/update
+router.put('/:id/update', songsCtrl.update)
 	
 module.exports = router;

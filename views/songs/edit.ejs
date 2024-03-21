@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+<!-- update id to edit-form & update styling -->
+<form id="new-form" action="/songs/<%= song._id %>/update?_method=PUT" method="POST">
+  <label>Title:</label>
+  <input type="text" name="title" value="<%= song.title %>">
+  <label>Artist:</label>
+  <input type="text" name="artist" value="<%= song.artist %>">
+  <label>Ft.:</label>
+  <input type="text" name="featured" value="<%= song.featured %>">
+  <label>Album:</label>
+  <input type="text" name="album" value="<%= song.album %>">
+  <input type="submit" value="Update Song">
+</form>
+
+<%- include('../partials/footer') %>

@@ -5,7 +5,9 @@ module.exports = {
   index,
   show,
   new: newSong,
-  create
+  create,
+  edit,
+  update,
 };
 
 async function index(req, res) {
@@ -39,4 +41,17 @@ async function create(req, res) {
     console.log(err);
     res.render('songs/new', { errorMsg: err.message });
   }
+}
+
+async function edit(req, res) {
+  const song = await Song.findById(req.params.id)
+  res.render('songs/edit', { title: 'Edit Song', song, errorMsg: '' })
+}
+
+async function update(req, res) {
+  if (req.body.featured === '') {
+    req.body.featured = '---'
+  }
+  const song = await Song.findByIdAndUpdate(req.params.id, req.body)
+  res.redirect('/songs')
 }
