@@ -32,6 +32,7 @@ Added playlists are able to store songs already added to the application as well
 # Getting Started
 
 [Click for Tunes!](https://tunes-dfa1282332af.herokuapp.com/)
+[Trello Board](https://trello.com/b/sPmIQ2gk/tunes)
 
 # Next Steps
 
