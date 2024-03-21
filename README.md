@@ -15,15 +15,19 @@ Added playlists are able to store songs already added to the application as well
 
 # Technologies Used
 
-- JavaScript
+- JS
 - HTML
 - CSS
-- MondoDb
+- MongoDB
 - Express
 - EJS
 - Node.js
 - Mongoose
 - Heroku
+- Trello
+- Git
+- Github
+- VS Code
 
 # Getting Started
 
