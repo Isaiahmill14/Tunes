@@ -65,12 +65,12 @@ nav > a.active {
 #new-form {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
+  grid-template-columns: repeat(2, minmax(auto, 12rem));
 }
 
+
 #new-form *,
-#add-review-form *,
-#add-performer-form * {
+#add-review-form * {
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;
@@ -78,7 +78,25 @@ nav > a.active {
 
 #new-form input[type="submit"] {
   grid-column: span 2;
-  width: 10rem;
+  width: 8rem;
+  margin-left: auto;
+}
+
+#new-form-playlist {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 12rem));
+}
+
+#new-form-playlist * {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#new-form-playlist input[type="submit"] {
+  grid-column: span 2;
+  width: 8rem;
   margin-left: auto;
 }
 
