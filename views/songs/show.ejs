@@ -40,7 +40,6 @@
       <% song.reviews.forEach(function(r) { %>
         <% total += r.rating %>
         <tr>
-          <!-- .toLocaleDateString() provides a more friendly date format -->
           <td><%= r.createdAt.toLocaleDateString() %></td>
           <td><%= r.content %></td>
           <td><%= r.rating %></td>

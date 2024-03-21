@@ -28,12 +28,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(methodOverride('_method'))
-// app.use(bodyParser.json())
 
 app.use('/', indexRouter);
 app.use('/songs', songsRouter);
-// Mount these routers to root because not all 
-// paths for a related/nested resource begin the same
+// Mount these routers to root because not all paths for a related/nested resource begin the same
 app.use('/', reviewsRouter);
 app.use('/playlists', playlistsRouter);
 

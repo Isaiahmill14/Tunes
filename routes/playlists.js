@@ -2,19 +2,17 @@ const express = require('express');
 const router = express.Router();
 const playlistsCtrl = require('../controllers/playlists');
 
-// This router is mounted to a "starts with" path of '/'
-
 // GET /playlists
 router.get('/', playlistsCtrl.index)
-// GET /playlists/new (new functionality)
+// GET /playlists/new 
 router.get('/new', playlistsCtrl.new);
-// GET /playlists/:id (show functionality) MUST be below new route
+// GET /playlists/:id 
 router.get('/:id', playlistsCtrl.show)
-// POST /playlists (create functionality)
+// POST /playlists 
 router.post('/', playlistsCtrl.create);
 // POST /playlists/:id/songs
 router.post('/:id/songs', playlistsCtrl.addToPlaylist)
-// DELETE /playlists/:id/songs/:od
+// DELETE /playlists/:id/songs/:id
 router.delete('/:playlistId/songs/:songId', playlistsCtrl.delete)
 
 module.exports = router;
