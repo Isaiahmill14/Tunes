@@ -51,8 +51,9 @@ async function create(req, res) {
 }
 
 async function deleteSong(req, res) {
-  const playlist = await Playlist.findOne({ 'songs._id': req.params.id })
-  playlist.songs.remove(req.params.id)
+  const playlist = await Playlist.findById(req.params.playlistId)
+  console.log(playlist)
+  playlist.songs.remove(req.params.songId)
   await playlist.save()
-  res.redirect(`/playlist/${playlist._id}`)
+  res.redirect(`/playlists/${playlist._id}`)
 }

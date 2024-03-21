@@ -15,6 +15,6 @@ router.post('/', playlistsCtrl.create);
 // POST /playlists/:id/songs
 router.post('/:id/songs', playlistsCtrl.addToPlaylist)
 // DELETE /playlists/:id/songs/:od
-router.delete('/:id/songs/:id', playlistsCtrl.delete)
+router.delete('/:playlistId/songs/:songId', playlistsCtrl.delete)
 
 module.exports = router;
