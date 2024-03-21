@@ -7,11 +7,11 @@ Added playlists are able to store songs already added to the application as well
 
 # Screenshot
 
-<img src="images/All Songs.png">
+<img src="/public/images/All Songs.png">
 
-<img src="images/Song Details.png">
+<img src="/public/images/Song Details.png">
 
-<img src="images/Playlist Details.png">
+<img src="/public/images/Playlist Details.png">
 
 # Technologies Used
 
