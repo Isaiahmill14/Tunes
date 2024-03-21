@@ -18,7 +18,7 @@ async function index(res, res) {
 async function show(req, res) {
   const playlist = await Playlist.findById(req.params.id).populate('songs')
   const songs = await Song.find({ _id: { $nin: playlist.song} }).sort('title')
-  res.render('playlists/show', { title: 'Playlist Detail', playlist, songs })
+  res.render('playlists/show', { title: 'Playlist Details', playlist, songs })
 }
 
 async function addToPlaylist(req, res) {

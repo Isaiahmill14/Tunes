@@ -17,7 +17,7 @@ async function index(req, res) {
 
 async function show(req, res) {
   const song = await Song.findById(req.params.id)
-  res.render('songs/show', { title: 'Song Detail', song });
+  res.render('songs/show', { title: 'Song Details', song });
 }
 
 function newSong(req, res) {
