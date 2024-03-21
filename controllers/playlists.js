@@ -7,6 +7,7 @@ module.exports = {
   new: newPlaylist,
   create,
   addToPlaylist,
+  delete: deleteSong,
 };
 
 async function index(res, res) {
@@ -47,4 +48,11 @@ async function create(req, res) {
     console.log(err);
   }
   res.redirect('/playlists');
+}
+
+async function deleteSong(req, res) {
+  const playlist = await Playlist.findOne({ 'songs._id': req.params.id })
+  playlist.songs.remove(req.params.id)
+  await playlist.save()
+  res.redirect(`/playlist/${playlist._id}`)
 }

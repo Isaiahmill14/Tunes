@@ -11,6 +11,7 @@
                 <th>Ft.</th>
                 <th>Album</th>
                 <th></th>
+                
             </tr>
         </thead>
         <tbody>
@@ -20,8 +21,13 @@
                     <td>${s.title}</td>
                     <td>${s.artist}</td>
                     <td>${s.featured}</td>
-                    <td>${s.album}</td><br>
-                    <td><a>DETAILS</a></td>
+                    <td>${s.album}</td>
+                    <td><a href="/songs/${s._id}">DETAILS</a></td>
+                    <td>
+                        <form action="/playlists/${playlist._id}/songs/${s._id}?_method=DELETE" class="delete-form" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                    </td>
                 </tr>`
                 ) %>
         </tbody>

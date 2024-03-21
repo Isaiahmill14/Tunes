@@ -11,7 +11,10 @@ router.get('/new', songsCtrl.new);
 router.get('/:id', songsCtrl.show);
 // POST /songs
 router.post('/', songsCtrl.create);
-//POST /playlists/:id/songs ---- this would go in movies to be post in playlists
-// router.post('/playlists/:id/songs', songsCtrl.addToPlaylist)
+// // GET /songs/update
+// router.get('/update', function(req, res, next) {
+//     const title = req.query.title
+
+// })
 	
 module.exports = router;
